@@ -1,0 +1,10 @@
+Updates to be made
+1. Optimize Player walking? <- Start here
+2. Redefine memory types
+3. Audio/Sound Manager
+4. Scene Manager
+5. Memory Manager
+6. Main Menu Updates
+7. Splash Screen 
+8. Particles and Livliness 
+9. Credit Scene?? Potentially 
