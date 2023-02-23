@@ -3,20 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DIalogueMemory : MonoBehaviour
+public class TextMemory : MonoBehaviour
 {
-    private Player playerRef;
+
     public GameObject dialogBox;
     public Text dialogText;
     public string dialogue;
     public bool dialogActive;
 
-    private void Start()
-    {
-        playerRef = GameObject.Find("Player").GetComponent<Player>();
-        if (playerRef == null) Debug.LogError("Memory doesnt have reference to Player!");
-    }
-
+    [SerializeField] int _id = 2;
 
 
     public void Play()
@@ -30,6 +25,10 @@ public class DIalogueMemory : MonoBehaviour
             dialogBox.SetActive(true);
             dialogText.text = dialogue;
         }
-        playerRef.canMove = true;
+        Player.instance.canMove = false;
+    }
+    public int GetID()
+    {
+        return _id;
     }
 }

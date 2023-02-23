@@ -2,29 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioMemory : MonoBehaviour
+public class AudioMemory : Memory
 {
-    public AudioSource audioSource;
+
     public AudioClip audioClip;
-    private Player playerRef;
-    private void Start()
-    {
-        playerRef = GameObject.Find("Player").GetComponent<Player>();
-        if (playerRef == null) Debug.LogError("Memory doesnt have reference to Player!");
-    }
+    [SerializeField] int _id = 0;
+
+
     public void Play()
     {
-        audioSource.playOnAwake = false;
-        audioSource.clip = audioClip;
-        audioSource.Play();
-
-
+        AudioManager.am.PlayClip(audioClip);
     }
-    public void Update()
+    public int GetID()
     {
-        if (!audioSource.isPlaying)
-        {
-            playerRef.canMove = true;
-        }
+        return _id;
     }
+
 }

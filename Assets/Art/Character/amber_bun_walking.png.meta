@@ -1,43 +1,7 @@
 fileFormatVersion: 2
-guid: 9ce417c06ebbd044aacbecc70df7a6b6
+guid: 602a729f1ce4509479931e7a02f63eba
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 3022661109679126868
-    second: DOWN_RIGHT
-  - first:
-      213: 8203128142508374866
-    second: LEFT_RIGHT
-  - first:
-      213: 2272574179677657886
-    second: DOWN_IDLE
-  - first:
-      213: -6080408920576632597
-    second: DOWN_LEFT
-  - first:
-      213: 6885639941130409933
-    second: LEFT_IDLE
-  - first:
-      213: 7673724119933067373
-    second: LEFT_LEFT
-  - first:
-      213: -917366926729868316
-    second: RIGHT_RIGHT
-  - first:
-      213: -4023980889328508249
-    second: RIGHT_IDLE
-  - first:
-      213: -8722240391403074315
-    second: RIGHT_LEFT
-  - first:
-      213: -5938185301291041867
-    second: UP_RIGHT
-  - first:
-      213: 8115653683657550168
-    second: UP_IDLE
-  - first:
-      213: 1164060838572999771
-    second: UP_LEFT
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -83,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,14 +63,14 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,22 +79,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,10 +91,22 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -153,202 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DOWN_RIGHT
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 336
-        width: 37
-        height: 47
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 459ffc6b346a2f920800000000000000
-      internalID: 3022661109679126868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LEFT_RIGHT
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 288
-        width: 34
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25bb835659d57d170800000000000000
-      internalID: 8203128142508374866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DOWN_IDLE
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 336
-        width: 37
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1b59610d2ec98f10800000000000000
-      internalID: 2272574179677657886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DOWN_LEFT
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 336
-        width: 37
-        height: 47
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be8d9e75d4c0e9ba0800000000000000
-      internalID: -6080408920576632597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LEFT_IDLE
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 288
-        width: 34
-        height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc7d1567b05be8f50800000000000000
-      internalID: 6885639941130409933
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LEFT_LEFT
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 288
-        width: 34
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6025f01e6b8e7a60800000000000000
-      internalID: 7673724119933067373
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RIGHT_RIGHT
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 240
-        width: 34
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4eb039bf3abd443f0800000000000000
-      internalID: -917366926729868316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RIGHT_IDLE
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 240
-        width: 34
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a22d9c73b2f728c0800000000000000
-      internalID: -4023980889328508249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RIGHT_LEFT
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 240
-        width: 34
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5fc0bd0939064f680800000000000000
-      internalID: -8722240391403074315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UP_RIGHT
+      name: amber_bun_walking_0
       rect:
         serializedVersion: 2
         x: 8
-        y: 192
+        y: 336
         width: 31
-        height: 45
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bbf91a2ee3579da0800000000000000
-      internalID: -5938185301291041867
+      spriteID: a139dc342b9ab2942aa9b1dd65187b6a
+      internalID: -149400948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UP_IDLE
+      name: amber_bun_walking_1
       rect:
         serializedVersion: 2
         x: 56
-        y: 192
+        y: 336
         width: 31
-        height: 46
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,19 +152,61 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 859af76d60890a070800000000000000
-      internalID: 8115653683657550168
+      spriteID: 7cb8ad500326d70409760b48e3aafe7d
+      internalID: 28962573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UP_LEFT
+      name: amber_bun_walking_2
       rect:
         serializedVersion: 2
         x: 104
-        y: 192
+        y: 336
         width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c708ff93fe3a76498ecddda70f3e1cc
+      internalID: -453353427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amber_bun_walking_3
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 288
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aff49aeb594fd24e8fadf1f0cfccbc1
+      internalID: 55243542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amber_bun_walking_4
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 288
+        width: 36
         height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -398,8 +215,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b54461c4a23972010800000000000000
-      internalID: 1164060838572999771
+      spriteID: d713fcc47d172da488be5b7b37d237b0
+      internalID: 1808734805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amber_bun_walking_5
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 288
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab47506c9e2c9284e93047acb739cbb5
+      internalID: -1821436106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amber_bun_walking_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 240
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb30cec2c62669c4cb37996c0feb03a7
+      internalID: 640634047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amber_bun_walking_7
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 240
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf721cf28d372774d8d56962be56edd6
+      internalID: 982261717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amber_bun_walking_8
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 240
+        width: 36
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10d2240c040fa9d4db4aef004da2a347
+      internalID: 510147472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amber_bun_walking_9
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 192
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af0615e55f66224aa3d0e62590c4188
+      internalID: 48535125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amber_bun_walking_10
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 192
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c918eb55d9a32f040b39628dfe2b336b
+      internalID: -418449338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: amber_bun_walking_11
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 192
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 815ae9534baffcb43a40e1f6e5d19839
+      internalID: -734148499
       vertices: []
       indices: 
       edges: []
@@ -415,18 +379,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DOWN_LEFT: -6080408920576632597
-      LEFT_RIGHT: 8203128142508374866
-      DOWN_RIGHT: 3022661109679126868
-      DOWN_IDLE: 2272574179677657886
-      RIGHT_IDLE: -4023980889328508249
-      UP_RIGHT: -5938185301291041867
-      LEFT_LEFT: 7673724119933067373
-      RIGHT_RIGHT: -917366926729868316
-      UP_IDLE: 8115653683657550168
-      RIGHT_LEFT: -8722240391403074315
-      LEFT_IDLE: 6885639941130409933
-      UP_LEFT: 1164060838572999771
+      amber_bun_walking_5: -1821436106
+      amber_bun_walking_2: -453353427
+      amber_bun_walking_10: -418449338
+      amber_bun_walking_4: 1808734805
+      amber_bun_walking_8: 510147472
+      amber_bun_walking_6: 640634047
+      amber_bun_walking_1: 28962573
+      amber_bun_walking_9: 48535125
+      amber_bun_walking_0: -149400948
+      amber_bun_walking_3: 55243542
+      amber_bun_walking_11: -734148499
+      amber_bun_walking_7: 982261717
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

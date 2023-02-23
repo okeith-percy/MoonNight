@@ -8,11 +8,10 @@ public class PictureMemory : MonoBehaviour
     public GameObject background;
     public GameObject mainPicture;
     public Sprite imageSource;
-    private Player playerRef;
+    [SerializeField] int _id = 1;
     private void Start()
     {
-        playerRef = GameObject.Find("Player").GetComponent<Player>();
-        if (playerRef == null) Debug.LogError("Memory doesnt have reference to Player!");
+
     }
     public void Play()
     {
@@ -28,7 +27,11 @@ public class PictureMemory : MonoBehaviour
             mainPicture.GetComponent<UnityEngine.UI.Image>().sprite = imageSource;
 
         }
-        playerRef.canMove = true;
+        Player.instance.canMove = true;
+    }
+    public int GetID()
+    {
+        return _id;
     }
 
 }
