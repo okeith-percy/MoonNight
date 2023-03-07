@@ -2,25 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
-{
-    public static AudioManager am;
 
+// Annie, the Audio Elephant is all about the jams. Her favorite jams are all over the eras but are timeless.
+// Annie's current jams are All by Myself by Celine Dion and Greatness by Quavo 
+public class AudioElephant : MonoBehaviour
+{
+
+    public static AudioElephant Annie;
     public List<AudioClip> playlist;
     private int currentTrack = 0;
     public AudioSource audioSource;
 
     private void Awake()
     {
-        if (am == null)
-        {
-            am = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (Annie != null) return;
+        Annie = this;
+        DontDestroyOnLoad(Annie.gameObject);
+
     }
     // Start is called before the first frame update
     void Start()
@@ -42,7 +40,8 @@ public class AudioManager : MonoBehaviour
             audioSource.Play();
         }
     }
-    public void PlayClip(AudioClip clip)
+    //MementoSana is Annie's special function, where she can play the beautiful sound of an Audio Memory
+    public void MementoSana(AudioClip clip)
     {
         audioSource.Stop();
         audioSource.clip = clip;

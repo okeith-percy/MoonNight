@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     private bool itemInRange;
     private void Awake()
     {
-        if (instance != null) { Debug.LogWarning("More then one instance of Player has been found!"); return; }
+        if (instance != null) { Debug.LogWarning("More then one instance of the Player has been found!"); return; }
 
         instance = this;
 
@@ -41,14 +41,12 @@ public class Player : MonoBehaviour
 
         MoveInput();
         Interact();
-        Collect();
 
     }
     //FixedUpdate is called once per frame at the fixed rate
     private void FixedUpdate()
     {
         Move();
-
     }
 
 
@@ -93,20 +91,17 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, faceDirection, .5f, itemLayer);
-            if (hit.collider != null)
+            RaycastHit2D hitItem = Physics2D.Raycast(transform.position, faceDirection, .5f, itemLayer);
+            if (hitItem.collider)
             {
-
-                Debug.DrawLine(transform.position, hit.point, Color.red, 10f);
-                interactedItem = hit.collider.GetComponent<Item>();
-                if (interactedItem != null && interactedItem?.interactable == true)
+                interactedItem = hitItem.collider.GetComponent<Item>();
+                if (interactedItem?.interactable ?? false)
                 {
-                    canMove = false;
-                    Memory.instance.PlayMemory(interactedItem);
-                    interactedItem.didInteract = true;
-                    Debug.Log("Interacted with " + interactedItem?.name);
-                }
 
+                    if (interactedItem.didInteract && !interactedItem.collected) Collect(interactedItem.card);
+                    else Play(interactedItem);
+
+                }
             }
             else
             {
@@ -116,50 +111,30 @@ public class Player : MonoBehaviour
         }
 
     }
-    // This works but I think I don't want to repeat them and have Collect be a different way
-    private void Collect()
+
+    //Collect the associated Card on an item.
+    void Collect(Card card)
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
+        var collectedCard = card;
+        Collection.collection.Add(collectedCard);
+        interactedItem.collected = true;
+    }
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, faceDirection, .5f, itemLayer);
-            if (hit.collider != null)
-            {
-
-                Debug.DrawLine(transform.position, hit.point, Color.red, 10f);
-                interactedItem = hit.collider.GetComponent<Item>();
-                if (interactedItem != null && interactedItem?.interactable == true)
-                {
-                    canMove = false;
-                    Collection.instance.Add(interactedItem?.card);
-                    Debug.Log("Collected " + interactedItem?.name);
-                }
-
-            }
-            else
-            {
-                Debug.DrawLine(transform.position, (Vector2)transform.position + faceDirection * 3f, Color.green, 2f);
-                Debug.Log("No Item");
-            }
-        }
-
-
+    void Play(Item item)
+    {
+        var playItem = item;
+        MemoryElephant.MemMaw.MementoAmoris(interactedItem);
+        item.didInteract = true;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Item"))
         {
+            var item = other.GetComponent<Item>();
             interactText.gameObject.SetActive(true);
             interactText.rectTransform.anchoredPosition = new Vector2(this.transform.position.x + 2, this.transform.position.y);
-            var item = other.GetComponent<Item>();
-            if (item.didInteract && !item.collected)
-            {
-                item.canCollect = true;
-                interactText.text = "Collect";
-                // collectText.rectTransform.anchoredPosition = new Vector2(this.transform.position.x + 2, this.transform.position.y - 0.5f);
-
-            }
+            interactText.text = (item.didInteract && !item.collected) ? "Collect" : "Interact";
         }
     }
 
@@ -168,7 +143,6 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Item"))
         {
             interactText?.gameObject.SetActive(false);
-            collectText?.gameObject.SetActive(false);
         }
     }
 

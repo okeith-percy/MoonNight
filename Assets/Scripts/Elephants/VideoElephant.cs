@@ -2,20 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VideoMemory : MonoBehaviour
+public class VideoElephant : MonoBehaviour
 {
-    // Start is called before the first frame update
 
+    public static VideoElephant Vinny;
+    [SerializeField] GameObject videoCanvas;
+    [SerializeField] UnityEngine.Video.VideoPlayer videoPlayer;
     public UnityEngine.Video.VideoClip videoClip;
     int _id = 3;
 
-
-
-    public void Play()
+    private void Awake()
     {
-        GameObject camera = GameObject.Find("Main Camera");
+        if (Vinny != null) return;
+        Vinny = this;
+        DontDestroyOnLoad(Vinny.gameObject);
 
-        var videoPlayer = camera.GetComponent<UnityEngine.Video.VideoPlayer>();
+    }
+    // MementoVideo is Vinny's special function once he resonate with a video memory, he plays the clip for all to see. 
+    public void MementoVideo(UnityEngine.Video.VideoClip videoClip)
+    {
+        videoCanvas.SetActive(true);
         videoPlayer.clip = videoClip;
         videoPlayer.loopPointReached += EndReached;
         videoPlayer.Prepare();
@@ -38,5 +44,6 @@ public class VideoMemory : MonoBehaviour
     {
         return _id;
     }
+
 
 }

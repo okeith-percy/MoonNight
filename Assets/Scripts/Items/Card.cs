@@ -8,8 +8,10 @@ public class Card : ScriptableObject
     public string desc;
 
 
-    public void UseCard()
+    public void PlayCard()
     {
         Debug.Log("Damn this card");
     }
+
+
 }

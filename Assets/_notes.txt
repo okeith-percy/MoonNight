@@ -1,7 +1,5 @@
 Updates to be made
-2. Redefine memory types (not done yet)
-4. Scene Manager (not done yet)
-5. Memory Manager (Not done yet)
+4. Scene Elephant (not done yet)
 6. Main Menu Updates (not done yet)
 7. Splash Screen (not done yet)
 8. Particles and Livliness (not done yet)
@@ -10,3 +8,4 @@ Updates to be made
 
 
 Music Choices (I want songs like blues and saxophones, electric guitar and piano music (but everything is going to be instrumental))
+

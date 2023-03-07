@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioMemory : Memory
+public class AudioMemory : MonoBehaviour
 {
 
     public AudioClip audioClip;
     [SerializeField] int _id = 0;
 
-
-    public void Play()
+    public void Resonate()
     {
-        AudioManager.am.PlayClip(audioClip);
+        AudioElephant.Annie.MementoSana(audioClip);
     }
     public int GetID()
     {
