@@ -8,6 +8,7 @@ public class Collection : MonoBehaviour
 {
     public static Collection collection;
     public List<Card> cards = new List<Card>();
+    public bool isShowing;
 
     [SerializeField] GameObject cardPrefab;
 
@@ -15,9 +16,9 @@ public class Collection : MonoBehaviour
 
     void Awake()
     {
-        if (collection != null) { Debug.LogWarning("More then one instance of Collection has been found!"); return; }
+        if (collection != null) { return; }
         collection = this;
-
+        DontDestroyOnLoad(collection.gameObject);
     }
 
     public void Add(Card card)
@@ -30,10 +31,14 @@ public class Collection : MonoBehaviour
         cardPrefab.GetComponentInChildren<TMP_Text>().text = card.cardName;
         cardPrefab.GetComponentInChildren<Image>().sprite = card.cardSprite;
         cardPrefab.SetActive(true);
+        isShowing = true;
         Debug.Log(card.cardName);
     }
-    public void Play()
-    {
 
+    public void Hide()
+    {
+        cardPrefab.SetActive(false);
+        isShowing = false;
     }
+
 }

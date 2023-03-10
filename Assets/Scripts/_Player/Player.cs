@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
 
         MoveInput();
         Interact();
+        if (Input.GetKeyDown(KeyCode.R)) PlayCard();
 
     }
     //FixedUpdate is called once per frame at the fixed rate
@@ -127,6 +128,15 @@ public class Player : MonoBehaviour
         item.didInteract = true;
     }
 
+    // PlayCard will play the first card in the collection (at the moment)
+    void PlayCard()
+    {
+        if (Collection.collection.isShowing)
+        {
+            Collection.collection.Hide();
+        }
+        Collection.collection.Show(Collection.collection.cards[0]);
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Item"))

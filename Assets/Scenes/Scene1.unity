@@ -3240,7 +3240,7 @@ GameObject:
   - component: {fileID: 837807940}
   - component: {fileID: 837807939}
   - component: {fileID: 837807938}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Annie
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -3920,7 +3920,7 @@ GameObject:
   - component: {fileID: 1284411396}
   - component: {fileID: 1284411395}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MainCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4380,7 +4380,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cards: []
-  cardPrefab: {fileID: 0}
+  isShowing: 0
+  cardPrefab: {fileID: 1556054835}
 --- !u!1 &1483834266
 GameObject:
   m_ObjectHideFlags: 0
@@ -5206,9 +5207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05bef56ca8dfb744aa7c179136f9977f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pictureCanvas: {fileID: 1188743748}
-  background: {fileID: 866131770}
-  mainPicture: {fileID: 1234647552}
   imageSource: {fileID: 21300000, guid: 3dc883f1f68601c4f893f93f18c47e1d, type: 3}
   _id: 1
 --- !u!1 &1782430547
@@ -8358,9 +8356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05bef56ca8dfb744aa7c179136f9977f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pictureCanvas: {fileID: 1188743748}
-  background: {fileID: 866131770}
-  mainPicture: {fileID: 1234647552}
   imageSource: {fileID: 21300000, guid: 2ed9359fb34ca0743a30907f3b94a327, type: 3}
   _id: 1
 --- !u!1 &1917438354
@@ -8593,6 +8588,53 @@ PolygonCollider2D:
       - {x: -9, y: -7}
       - {x: 8, y: -7}
       - {x: 8, y: 8}
+--- !u!1 &2014263018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2014263020}
+  - component: {fileID: 2014263019}
+  m_Layer: 0
+  m_Name: Penne
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2014263019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014263018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161188e1bd4801545bcd94fbe9523223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pictureCanvas: {fileID: 1188743748}
+  backgroundImage: {fileID: 866131770}
+  mainImage: {fileID: 1234647552}
+--- !u!4 &2014263020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014263018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.5541914, y: 3.1263447, z: 0.6098515}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2062412577
 GameObject:
   m_ObjectHideFlags: 0
