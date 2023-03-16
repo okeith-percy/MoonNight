@@ -1,17 +1,22 @@
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class Card : ScriptableObject
 {
     public string cardName;
     public Sprite cardSprite;
-    public string desc;
+    [TextArea(1, 3)]
+    public string cardDesc;
 
+}
 
-    public void PlayCard()
-    {
-        Debug.Log("Damn this card");
-    }
-
+[System.Serializable]
+public class CardPrefab
+{
+    public TMP_Text card_name;
+    public Image card_image;
+    public GameObject CardDisplay;
+    public TMP_Text card_description;
 
 }

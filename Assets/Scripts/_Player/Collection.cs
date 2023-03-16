@@ -9,16 +9,12 @@ public class Collection : MonoBehaviour
     public static Collection collection;
     public List<Card> cards = new List<Card>();
     public bool isShowing;
-
-    [SerializeField] GameObject cardPrefab;
-
-
+    public CardPrefab card;
 
     void Awake()
     {
         if (collection != null) { return; }
         collection = this;
-        DontDestroyOnLoad(collection.gameObject);
     }
 
     public void Add(Card card)
@@ -26,19 +22,23 @@ public class Collection : MonoBehaviour
         cards.Add(card);
     }
 
-    public void Show(Card card)
+    public void Show(Card newCard)
     {
-        cardPrefab.GetComponentInChildren<TMP_Text>().text = card.cardName;
-        cardPrefab.GetComponentInChildren<Image>().sprite = card.cardSprite;
-        cardPrefab.SetActive(true);
+        card.card_name.text = newCard.cardName;
+        card.card_image.sprite = newCard.cardSprite;
+        card.card_description.text = newCard.cardDesc;
+        card.CardDisplay.SetActive(true);
+
         isShowing = true;
-        Debug.Log(card.cardName);
+        Debug.Log(newCard.cardName);
     }
 
     public void Hide()
     {
-        cardPrefab.SetActive(false);
+        card.CardDisplay.SetActive(false);
         isShowing = false;
     }
+
+
 
 }
