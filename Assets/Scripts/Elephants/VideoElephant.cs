@@ -35,6 +35,7 @@ public class VideoElephant : MonoBehaviour
     IEnumerator GracefulExit(UnityEngine.Video.VideoPlayer vp)
     {
         yield return new WaitForSeconds(2);
+        videoCanvas.SetActive(false);
         vp.clip = null;
         Player.instance.canMove = true;
 

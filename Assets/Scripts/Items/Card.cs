@@ -16,7 +16,16 @@ public class CardPrefab
 {
     public TMP_Text card_name;
     public Image card_image;
-    public GameObject CardDisplay;
+    public GameObject Display;
     public TMP_Text card_description;
 
 }
+
+[System.Serializable]
+public class CardGallery
+{
+    public CardPrefab[] cards;
+    public GameObject Display;
+}
+
+

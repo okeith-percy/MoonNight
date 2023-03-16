@@ -133,9 +133,10 @@ public class Player : MonoBehaviour
     {
         if (Collection.collection.isShowing)
         {
-            Collection.collection.Hide();
+            // Collection.collection.Hide();
+            Debug.Log("I AM SHOWING");
         }
-        Collection.collection.Show(Collection.collection.cards[0]);
+        Collection.collection.ViewCollection();
     }
     void OnTriggerEnter2D(Collider2D other)
     {
