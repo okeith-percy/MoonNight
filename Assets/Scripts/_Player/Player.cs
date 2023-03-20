@@ -119,6 +119,7 @@ public class Player : MonoBehaviour
         var collectedCard = card;
         Collection.collection.Add(collectedCard);
         interactedItem.collected = true;
+        interactText.text = "Interact";
     }
 
     void Play(Item item)
@@ -126,6 +127,7 @@ public class Player : MonoBehaviour
         var playItem = item;
         MemoryElephant.MemMaw.MementoAmoris(interactedItem);
         item.didInteract = true;
+        interactText.text = "Collect";
     }
 
     // PlayCard will play the first card in the collection (at the moment)

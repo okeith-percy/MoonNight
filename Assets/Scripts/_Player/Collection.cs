@@ -65,7 +65,29 @@ public class Collection : MonoBehaviour
             cardGallery.cards[i].card_name.text = cards[i].cardName;
             cardGallery.cards[i].card_image.sprite = cards[i].cardSprite;
             cardGallery.cards[i].card_description.text = cards[i].cardDesc;
+
+
+            //View by card type
+            switch (cards[i].GetMemoryType())
+            {
+                case Item.MemoryType.Audio:
+                    Debug.Log("HeA");
+                    break;
+
+                case Item.MemoryType.Dialogue:
+                    Debug.Log("HeD");
+                    break;
+
+                case Item.MemoryType.Picture:
+                    Debug.Log("HeP");
+                    break;
+
+                case Item.MemoryType.Video:
+                    Debug.Log("HeV");
+                    break;
+            }
         }
         cardGallery.Display.SetActive(true);
+
     }
 }

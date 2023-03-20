@@ -8,6 +8,13 @@ public class Card : ScriptableObject
     public Sprite cardSprite;
     [TextArea(1, 3)]
     public string cardDesc;
+    [SerializeField]
+    Item.MemoryType type;
+
+    public Item.MemoryType GetMemoryType()
+    {
+        return type;
+    }
 
 }
 
@@ -18,6 +25,7 @@ public class CardPrefab
     public Image card_image;
     public GameObject Display;
     public TMP_Text card_description;
+
 
 }
 
