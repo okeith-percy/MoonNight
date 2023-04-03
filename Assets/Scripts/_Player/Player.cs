@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
         Interact();
         if (Input.GetKeyDown(KeyCode.R)) PlayCard();
 
+
     }
     //FixedUpdate is called once per frame at the fixed rate
     private void FixedUpdate()
@@ -127,7 +128,7 @@ public class Player : MonoBehaviour
         var playItem = item;
         MemoryElephant.MemMaw.MementoAmoris(interactedItem);
         item.didInteract = true;
-        interactText.text = "Collect";
+        if (!interactedItem.collected) interactText.text = "Collect";
     }
 
     // PlayCard will play the first card in the collection (at the moment)
@@ -135,10 +136,12 @@ public class Player : MonoBehaviour
     {
         if (Collection.collection.isShowing)
         {
-            // Collection.collection.Hide();
-            Debug.Log("I AM SHOWING");
+            Collection.collection.Hide();
+
         }
-        Collection.collection.ViewCollection();
+        else { Collection.collection.ViewCollection(); }
+        // Collection.collection.Show();
+
     }
     void OnTriggerEnter2D(Collider2D other)
     {

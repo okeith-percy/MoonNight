@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Plant
   cardSprite: {fileID: -7240405264570091981, guid: 994905c2b02348d45b954378fe195c69, type: 3}
-  desc: I am a plant
+  cardDescription: Poison Ivy
+  type: 3

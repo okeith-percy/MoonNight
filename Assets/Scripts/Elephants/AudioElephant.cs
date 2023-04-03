@@ -5,6 +5,7 @@ using UnityEngine;
 
 // Annie, the Audio Elephant is all about the jams. Her favorite jams are all over the eras but are timeless.
 // Annie's current jams are All by Myself by Celine Dion and Greatness by Quavo 
+[RequireComponent(typeof(AudioSource))]
 public class AudioElephant : MonoBehaviour
 {
 

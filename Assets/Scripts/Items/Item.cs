@@ -2,8 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+[RequireComponent(typeof(BoxCollider2D))]
 public class Item : MonoBehaviour
 {
+
     public enum MemoryType
     {
         Audio,

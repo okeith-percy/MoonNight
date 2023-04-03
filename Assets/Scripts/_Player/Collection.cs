@@ -9,19 +9,59 @@ public class Collection : MonoBehaviour
     public static Collection collection;
     public List<Card> cards = new List<Card>();
     public bool isShowing;
-    public CardPrefab card;
+    public GameObject cardPrefab;
+    public GameObject[] cardSlots;
+    [SerializeField]
+    private CardPrefab defaultCard;
+    public Card tempCard;
     [SerializeField]
     CardGallery cardGallery;
+    [SerializeField]
+    GameObject cardGalleryUI;
+    [SerializeField]
+    TMP_Text cardGalleryPageUI;
+    private int page = 0;
 
     void Awake()
     {
         if (collection != null) { return; }
         collection = this;
+
+    }
+    private void Start()
+    {
+        defaultCard = new CardPrefab(cardPrefab);
+        cardGallery = new CardGallery(cardSlots, 30);
+
     }
 
+    private void Update()
+    {
+        UpdatePage();
+
+    }
+    private void UpdatePage()
+    {
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (page >= 3) page = 0;
+            page++;
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (page <= 0)
+            {
+                page = 4;
+            }
+            page--;
+        }
+        cardGalleryPageUI.SetText("{0}/{1}", page + 1, Mathf.FloorToInt((30 - 1) / 8));
+    }
     public void Add(Card card)
     {
         cards.Add(card);
+        tempCard = card;
 
         //Assign the card to its UI counterpart
 
@@ -31,63 +71,33 @@ public class Collection : MonoBehaviour
 
     }
 
-    void SetCardUI(Card newCard)
-    {
-        card.card_name.text = newCard.cardName;
-        card.card_image.sprite = newCard.cardSprite;
-        card.card_description.text = newCard.cardDesc;
-    }
-    void SetCardGalleryUI(Card newCard)
-    {
 
-    }
-    public void Show(Card newCard)
+    public void Show()
     {
-        SetCardUI(newCard);
-        card.Display.SetActive(true);
+        // defaultCard.UpdateCard(tempCard);
+        // defaultCard.CardDisplay.SetActive(true);
+        // Debug.LogFormat("I AM {0}", defaultCard.CardDisplay.activeInHierarchy);
 
         isShowing = true;
-        Debug.Log(newCard.cardName);
     }
 
     public void Hide()
     {
-        card.Display.SetActive(false);
-        isShowing = false;
+        Debug.Log("HIde");
+        cardGalleryUI.SetActive(false); isShowing = false;
     }
 
 
     public void ViewCollection()
     {
-        // GameObject CardBG = CardGallery.GetComponentInChildren<GameObject>();
+        UpdatePage();
         for (int i = 0; i < cards.Count; i++)
         {
-            cardGallery.cards[i].card_name.text = cards[i].cardName;
-            cardGallery.cards[i].card_image.sprite = cards[i].cardSprite;
-            cardGallery.cards[i].card_description.text = cards[i].cardDesc;
-
-
-            //View by card type
-            switch (cards[i].GetMemoryType())
-            {
-                case Item.MemoryType.Audio:
-                    Debug.Log("HeA");
-                    break;
-
-                case Item.MemoryType.Dialogue:
-                    Debug.Log("HeD");
-                    break;
-
-                case Item.MemoryType.Picture:
-                    Debug.Log("HeP");
-                    break;
-
-                case Item.MemoryType.Video:
-                    Debug.Log("HeV");
-                    break;
-            }
+            cardGallery.cards[i].SetCardUI(cards[i]);
+            cardSlots[i].SetActive(true);
         }
-        cardGallery.Display.SetActive(true);
+        isShowing = true;
+        cardGalleryUI.SetActive(true);
 
     }
 }

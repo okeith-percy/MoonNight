@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Wine
   cardSprite: {fileID: 0}
-  desc: This is a Wine Bottle
+  cardDescription: Run the red
+  type: 1
