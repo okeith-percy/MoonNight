@@ -14,19 +14,19 @@ public class Item : MonoBehaviour
         Video
     }
     public MemoryType memoryType;
-    public bool canCollect = false;
-    public bool collected = false;
+    public bool canCollect;
+    public bool collected;
     public bool interactable;
-    public bool didInteract = false;
+    public bool didInteract;
 
-    public GameObject cardPrefab;
     public Card card;
 
 
     private void Start()
     {
-
-
+        canCollect = false;
+        collected = false;
+        didInteract = false;
     }
 
     private void OnTriggerEnter2D(Collider2D player)
@@ -49,8 +49,6 @@ public class Item : MonoBehaviour
         {
             interactable = false;
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f);
-            cardPrefab.SetActive(false);
-            // interactImage.gameObject.SetActive(false);
             if (this.memoryType == MemoryType.Dialogue)
             {
                 DialogueElephant.DeeDee.Stop();
